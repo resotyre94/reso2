@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ALI Inventory System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#242423', // Dark Black
+              secondary: '#F5CB5C', // Mustard Yellow
+              accent: '#E3D5CA', // Beige/Sand
+              surface: '#FAFAFA', // Off-white
+            },
+            fontFamily: {
+              sans: ['"Aptos Display"', '"Arial Narrow"', 'Impact', 'sans-serif'],
+              mono: ['"Courier New"', 'monospace'],
+            },
+            borderRadius: {
+              'xl': '1rem',
+              '2xl': '1.5rem',
+              '3xl': '2rem',
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+      
+      body {
+        font-family: "Aptos Display", "Arial Narrow", "Inter", sans-serif;
+      }
+
+      /* --- ROBUST PRINT STYLES --- */
+      @media print {
+        @page {
+            size: A4;
+            margin: 1cm;
+        }
+        
+        body * {
+          visibility: hidden;
+        }
+        
+        body, html {
+          height: auto;
+          overflow: visible;
+          background: white;
+        }
+
+        .print-only, .print-only * {
+          visibility: visible !important;
+        }
+
+        .print-only {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          background: white;
+          z-index: 9999;
+          color: black;
+        }
+
+        .no-print, button, input, select, nav, header, footer, .sidebar {
+          display: none !important;
+        }
+
+        /* Table Formatting for Print */
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          border: 1px solid #000;
+          font-size: 10px; /* Smaller font for detailed SOA */
+        }
+        th, td {
+          border: 1px solid #ddd !important;
+          padding: 6px 8px;
+          color: black !important;
+        }
+        th {
+          background-color: #f0f0f0 !important;
+          -webkit-print-color-adjust: exact;
+          border-bottom: 2px solid black !important;
+        }
+        tfoot {
+            border-top: 2px solid black !important;
+        }
+      }
+
+      /* Hide print container on screen */
+      .print-only { display: none; }
+      
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #242423; }
+      ::-webkit-scrollbar-thumb { background: #555; border-radius: 3px; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-surface text-primary">
+    <div id="root"></div>
+  </body>
+</html>
